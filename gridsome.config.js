@@ -5,7 +5,7 @@
 // To restart press CTRL + C in terminal and run `gridsome develop`
 
 module.exports = {
-  siteName: 'Gridsome',
+  siteName: 'VR建材城市联盟',
   plugins: [
     {
       use: '@gridsome/source-strapi',

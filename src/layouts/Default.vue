@@ -2,16 +2,23 @@
   <div class="layout">
     <header class="header">
       <div class="header-container">
-        <g-link to="/">VR展示平台</g-link>
+        <g-link class="" to="/">VR建材城市联盟</g-link>
         <nav class="nav">
           <g-link exact active-class="active" class="nav-link" to="/"
             >首页</g-link
           >
           <g-link class="nav-link" to="/vr/">VR漫游</g-link>
+          <g-link class="nav-link" to="/activity/">联盟活动</g-link>
         </nav>
         <div class="header-search-container">
-          <input class="header-search" placeholder="搜索VR漫游" type="text" />
+          <input
+            v-model="searchInput"
+            class="header-search"
+            placeholder="搜索VR漫游"
+            type="text"
+          />
           <svg
+            @click="toDetailSearch"
             t="1619750233090"
             class="icon"
             viewBox="0 0 1024 1024"
@@ -36,13 +43,25 @@
   </div>
 </template>
 
-<static-query>
-query {
-  metadata {
-    siteName
-  }
-}
-</static-query>
+<script>
+export default {
+  data() {
+    return {
+      searchInput: "",
+    };
+  },
+  methods: {
+    toDetailSearch() {
+      this.$router.push({
+        path: "vr",
+        query: {
+          search: this.searchInput,
+        },
+      });
+    },
+  },
+};
+</script>
 
 <style>
 html,
@@ -61,8 +80,16 @@ li {
   line-height: 1.5;
 }
 
+html,
+body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
 .layout {
   width: 100%;
+  height: 100%;
 }
 
 select,
@@ -120,6 +147,10 @@ input:focus-visible {
 
 .content {
   margin-top: 60px;
+  width: 100%;
+  height: calc(100% - 60px);
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
 .nav-link {

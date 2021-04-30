@@ -29,7 +29,7 @@
 <script>
 export default {
   metaInfo: {
-    title: "Hello, world!",
+    title: "首页",
   },
   data() {
     return {

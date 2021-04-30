@@ -205,7 +205,7 @@ import axios from "axios";
 
 export default {
   metaInfo: {
-    title: "About us",
+    title: "VR漫游",
   },
   data() {
     return {
@@ -218,7 +218,6 @@ export default {
     };
   },
   mounted() {
-    console.dir(this.$route);
     this.searchInput = this.$route.query.search;
     this.getVrs();
   },

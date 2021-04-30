@@ -6,6 +6,7 @@
 
 module.exports = {
   siteName: 'VR建材城市联盟',
+  port: 8081,
   plugins: [
     {
       use: '@gridsome/source-strapi',

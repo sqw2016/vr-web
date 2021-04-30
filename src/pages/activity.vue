@@ -9,6 +9,9 @@
 <script>
 export default {
   name: "Activity",
+  metaInfo: {
+    title: "联盟活动",
+  },
 };
 </script>
 

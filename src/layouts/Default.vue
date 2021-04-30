@@ -8,7 +8,7 @@
             >首页</g-link
           >
           <g-link class="nav-link" to="/vr/">VR漫游</g-link>
-          <g-link class="nav-link" to="/activity/">联盟活动</g-link>
+          <!-- <g-link class="nav-link" to="/activity/">联盟活动</g-link> -->
         </nav>
         <div class="header-search-container">
           <input

@@ -6,5 +6,20 @@
 
 module.exports = {
   siteName: 'Gridsome',
-  plugins: []
+  plugins: [
+    {
+      use: '@gridsome/source-strapi',
+      options: {
+        apiURL: 'http://117.50.107.63:1337',
+        queryLimit: 1000, // Defaults to 100
+        contentTypes: ['area', 'company', 'vr'],
+        // Possibility to login with a Strapi user,
+        // when content types are not publicly available (optional).
+        loginData: {
+          identifier: '',
+          password: ''
+        }
+      }
+    }
+  ]
 }

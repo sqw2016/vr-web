@@ -2,7 +2,7 @@
   <div class="layout">
     <header class="header">
       <div class="header-container">
-        <g-link class="" to="/">VR建材城市联盟</g-link>
+        <g-link class="logo" to="/">VR建材城市联盟</g-link>
         <nav class="nav">
           <g-link exact active-class="active" class="nav-link" to="/"
             >首页</g-link
@@ -90,6 +90,22 @@ body {
 .layout {
   width: 100%;
   height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.logo {
+  min-width: 150px;
+  flex-shrink: 0;
+  height: 60px;
+  line-height: 60px;
+}
+
+.nav {
+  min-width: 150px;
+  flex-shrink: 0;
+  height: 60px;
+  line-height: 60px;
 }
 
 select,
@@ -99,9 +115,8 @@ input:focus-visible {
 
 .header {
   width: 100%;
-  position: fixed;
-  top: 0;
   background: #fff;
+  flex-shrink: 0;
 }
 
 .header a {
@@ -123,11 +138,13 @@ input:focus-visible {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 60px;
+  flex-wrap: wrap;
 }
 
 .header-search-container {
   position: relative;
+  height: 60px;
+  line-height: 60px;
 }
 
 .header-search-container svg {
@@ -135,7 +152,7 @@ input:focus-visible {
   width: 20px;
   height: 20px;
   right: 10px;
-  top: 5px;
+  top: 20px;
   cursor: pointer;
 }
 
@@ -146,9 +163,8 @@ input:focus-visible {
 }
 
 .content {
-  margin-top: 60px;
   width: 100%;
-  height: calc(100% - 60px);
+  height: 100%;
   overflow-x: hidden;
   overflow-y: auto;
 }

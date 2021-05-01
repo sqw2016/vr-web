@@ -278,13 +278,14 @@ export default {
 .banner-search {
   margin: 0 auto;
   display: flex;
+  width: 60%;
   position: relative;
 }
 
 .search-input {
   border: 0;
   height: 40px;
-  width: 500px;
+  width: 100%;
   background: rgba(225, 225, 255, 0.8);
   padding: 0 10px;
   font-size: 20px;
@@ -300,6 +301,7 @@ export default {
   align-items: center;
   color: #fff;
   cursor: pointer;
+  flex-shrink: 0;
 }
 
 .search-close-icon {
@@ -355,6 +357,13 @@ export default {
   border-radius: 3px;
   overflow: hidden;
   transition: all 0.3s;
+}
+
+@media screen and (max-width: 420px) {
+  .vr-list-item {
+    width: 96%;
+    margin: 0 0 25px 2%;
+  }
 }
 
 .vr-list-item a {

@@ -1,13 +1,14 @@
 <template>
   <Layout>
-    <div class="content-bg"></div>
-    <div class="company-list">
-      <img
-        v-for="c in $page.companies.edges"
-        :key="c.node.id"
-        :src="domain + c.node.img[0].url"
-        alt=""
-      />
+    <div class="list-container">
+      <div class="company-list">
+        <img
+          v-for="c in $page.companies.edges"
+          :key="c.node.id"
+          :src="domain + c.node.img[0].url"
+          alt=""
+        />
+      </div>
     </div>
   </Layout>
 </template>
@@ -40,19 +41,18 @@ export default {
 </script>
 
 <style>
-.content-bg {
+.list-container {
   width: 100%;
   height: 100%;
+  overflow-y: auto;
   background: url("https://img2.baidu.com/it/u=3830199803,419151711&fm=26&fmt=auto&gp=0.jpg");
   background-size: 100% 100%;
-  position: fixed;
-  top: 60px;
-  z-index: -1;
+  background-attachment: fixed;
 }
 .company-list {
-  padding: 10px;
-  width: 1080px;
-  margin: 50px auto;
+  padding: 30px 0;
+  width: 90%;
+  margin: 0 auto;
 }
 
 .company-list img {
@@ -60,5 +60,17 @@ export default {
   height: 60px;
   margin: 0 10px 20px;
   cursor: pointer;
+}
+
+@media screen and (max-width: 420px) {
+  .company-list {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  .company-list img {
+    width: 48%;
+    margin: 0 0 25px;
+  }
 }
 </style>

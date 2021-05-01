@@ -10,7 +10,7 @@
           <g-link class="nav-link" to="/vr/">VR漫游</g-link>
           <!-- <g-link class="nav-link" to="/activity/">联盟活动</g-link> -->
         </nav>
-        <div class="header-search-container">
+        <!-- <div class="header-search-container">
           <input
             v-model="searchInput"
             class="header-search"
@@ -34,7 +34,7 @@
               fill="#1296db"
             ></path>
           </svg>
-        </div>
+        </div> -->
       </div>
     </header>
     <div class="content">
@@ -106,6 +106,7 @@ body {
   flex-shrink: 0;
   height: 60px;
   line-height: 60px;
+  margin-left: 200px;
 }
 
 select,
@@ -136,9 +137,16 @@ input:focus-visible {
   width: 90%;
   margin: 0 auto;
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  flex-wrap: wrap;
+}
+
+@media screen and (max-width: 420px) {
+  .header-container {
+    justify-content: space-between;
+  }
+  .nav {
+    margin-left: 0;
+  }
 }
 
 .header-search-container {

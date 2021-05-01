@@ -53,7 +53,7 @@ export default {
   methods: {
     toDetailSearch() {
       this.$router.push({
-        path: "vr",
+        path: "/vr",
         query: {
           search: this.searchInput,
         },
